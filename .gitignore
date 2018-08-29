@@ -1,0 +1,14 @@
+/caches/
+/backups/
+
+# Top secret stuff!
+/link/.ssh/authorized_keys
+/link/.ssh/id_*
+/link/.ssh/*.pem
+/link/.ssh/known_hosts
+vimrc_local
+
+# ignore local fish config
+/config/fish/config_local.fish
+/config/fish/fish_history
+/config/fish/fishd*
