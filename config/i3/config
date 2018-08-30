@@ -16,7 +16,7 @@ set $icon_font FontAwesome 5
 font pango:$font
 
 # Define Locker
-set $Locker i3lock -i '~/Pictures/wallpaper.jpg' && sleep 1
+set $Locker i3lock -t -i $HOME/Pictures/Wallpaper_1920x1200-03.png && sleep 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -125,10 +125,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 set $workspace1_terminal "1 "
 set $workspace2_mail "2 "
 set $workspace3_code "3 "
-set $workspace4_browser "4 "
-set $workspace5_filebrowser "5 "
+set $workspace4_browser "4 "
+set $workspace5_filebrowser "5 "
 set $workspace6_misc "6 "
-set $workspace7_imgprocessing "7 "
+set $workspace7_keypass "7 "
 set $workspace8 "8 "
 set $workspace9 "9 "
 set $workspace10 "10 "
@@ -140,7 +140,7 @@ bindsym $mod+3 workspace $workspace3_code
 bindsym $mod+4 workspace $workspace4_browser
 bindsym $mod+5 workspace $workspace5_filebrowser
 bindsym $mod+6 workspace $workspace6_misc
-bindsym $mod+7 workspace $workspace7_imgprocessing
+bindsym $mod+7 workspace $workspace7_keypass
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
@@ -152,7 +152,7 @@ bindsym $mod+Shift+3 move container to workspace $workspace3_code
 bindsym $mod+Shift+4 move container to workspace $workspace4_browser
 bindsym $mod+Shift+5 move container to workspace $workspace5_filebrowser
 bindsym $mod+Shift+6 move container to workspace $workspace6_misc
-bindsym $mod+Shift+7 move container to workspace $workspace7_imgprocessing
+bindsym $mod+Shift+7 move container to workspace $workspace7_keypass
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
@@ -188,10 +188,10 @@ assign [class="Terminal"]       $workspace1_terminal
 assign [class="Thunderbird"]    $workspace2_mail
 assign [class="Firefox"]        $workspace4_browser
 assign [class="Chromium"]       $workspace4_browser
-assign [class="Eclipse"]        $workspace3_code
 assign [class="jetbrains-idea"] $workspace3_code
+assign [class="keypassxc"]      $workspace7_keypass
 
-# for_window [instance="keepassxc"]    floating enable
+
 for_window [instance="pavucontrol"] floating enable
 
 #############################################
@@ -261,8 +261,7 @@ exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-c
 exec --no-startup-id /usr/bin/bash ~/.screenlayout/2monitors.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
-# exec --no-startup-id compton --config ~/.config/i3/compton.conf
-exec --no-startup-id chromium
+exec --no-startup-id /usr/bin/nm-applet
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
