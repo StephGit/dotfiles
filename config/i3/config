@@ -16,7 +16,7 @@ set $icon_font FontAwesome 10
 font pango:$font
 
 # Define Locker
-set $Locker i3lock -t -i $HOME/Pictures/Wallpaper_1920x1200-03.png && sleep 1
+set $Locker i3lock -t -i $HOME/Pictures/wallpaper.png && sleep 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -56,7 +56,7 @@ bindsym XF86Display        exec arandr
 bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
-bindsym $mod+m exec ~/.screenlayout/display-layout.sh
+bindsym $mod+m                  exec $HOME/.screenlayout/display_layout.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
