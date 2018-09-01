@@ -12,7 +12,7 @@ set $mod Mod4
 
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 set $font System San Francisco Display 8
-set $icon_font FontAwesome 5
+set $icon_font FontAwesome 10
 font pango:$font
 
 # Define Locker
@@ -56,7 +56,7 @@ bindsym XF86Display        exec arandr
 bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
-bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
+bindsym $mod+m exec ~/.screenlayout/display-layout.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -257,8 +257,7 @@ bindsym $mod+T mode "$mode_thinkpad"
 #############################################
 exec --no-startup-id clipit
 exec --no-startup-id volwheel
-exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
-exec --no-startup-id /usr/bin/bash ~/.screenlayout/2monitors.sh
+exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-layout.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
 exec --no-startup-id /usr/bin/nm-applet
