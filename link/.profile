@@ -3,7 +3,7 @@
 setxkbmap ch
 
 # set the dpi for high resolution display
-xrandr --dpi 180
+# xrandr --dpi 180
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

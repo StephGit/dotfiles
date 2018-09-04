@@ -12,7 +12,7 @@ set $mod Mod4
 
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 set $font System San Francisco Display 8
-set $icon_font FontAwesome 10
+set $icon_font FontAwesome 9 
 font pango:$font
 
 # Define Locker
@@ -170,11 +170,11 @@ bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
-set $screen_internal   "eDP-1"
+# set $screen_internal   "eDP-1"
 set $screen_external_1 "DP-1-1"
 set $screen_external_2 "DP-1-2"
 
-workspace $workspace1_terminal     output $screen_internal
+workspace $workspace1_terminal     output $screen_external_1
 workspace $workspace2_mail         output $screen_external_1
 workspace $workspace3_code         output $screen_external_1
 workspace $workspace4_browser      output $screen_external_2
@@ -264,6 +264,11 @@ exec --no-startup-id /usr/bin/nm-applet
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id intellij
+exec_always --no-startup-id i3-sensible-terminal
+exec_always --no-startup-id chromium-browser
+exec_always --no-startup-id thunderbird
+exec_always --no-startup-id keepassxc
 
 #############################################
 #                 i3-bar                    #
@@ -286,9 +291,6 @@ bar {
     urgent_workspace   #2f343a #900000 #ffffff
   }
 }
-
-
-# exec xrandr --dpi 96
 
 client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
