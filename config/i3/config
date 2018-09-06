@@ -189,7 +189,7 @@ assign [class="Thunderbird"]    $workspace2_mail
 assign [class="Firefox"]        $workspace4_browser
 assign [class="Chromium"]       $workspace4_browser
 assign [class="jetbrains-idea"] $workspace3_code
-assign [class="keypassxc"]      $workspace7_keypass
+assign [class="keepassxc"]      $workspace7_keypass
 
 
 for_window [instance="pavucontrol"] floating enable
