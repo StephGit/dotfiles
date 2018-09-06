@@ -5,9 +5,10 @@ set -e
 function find_default_monitor {
   CONNECTED_MONITORS=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
   for monitor in $CONNECTED_MONITORS; do
-    if [ $monitor = 'eDP-1' ] || [ $monitor = 'LVDS-1'];
+    if [ $monitor == "eDP-1" ] || [ $monitor == "LVDS-1" ];
     then
       echo $monitor
+      echo "Default monitor detected: $monitor" >&2
       exit
     fi;
   done
@@ -64,7 +65,7 @@ function is_monitor_active {
 }
 
 function is_screen_connected {
-    ! xrandr | grep "$1" | grep disconnected
+    ! xrandr | grep "$1 " | grep disconnected
 }
 
 # Iterate over all keys [HDMI, DP, TB INTERNAL]
@@ -81,5 +82,5 @@ for monitor in $MONITOR_THUNDERBOLT $MONITOR_HDMI $MONITOR_INTERNAL; do
   fi
 done
 
-i3-msg reload
-i3-msg restart
+# i3-msg reload
+# i3-msg restart

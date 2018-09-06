@@ -184,7 +184,7 @@ workspace $workspace4_browser      output $screen_external_2
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Terminal"]       $workspace1_terminal
+assign [class="x-terminal-emulator"]       $workspace1_terminal
 assign [class="Thunderbird"]    $workspace2_mail
 assign [class="Firefox"]        $workspace4_browser
 assign [class="Chromium"]       $workspace4_browser
