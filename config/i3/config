@@ -12,7 +12,7 @@ set $mod Mod4
 
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 set $font System San Francisco Display 8
-set $icon_font FontAwesome 9 
+set $icon_font FontAwesome 9
 font pango:$font
 
 # Define Locker
@@ -57,6 +57,7 @@ bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
 bindsym $mod+m                  exec $HOME/.screenlayout/display_layout.sh
+bindsym $mod+i		   exec $HOME/.screenlayout/1internal_eDP-1.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -170,7 +171,7 @@ bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
-# set $screen_internal   "eDP-1"
+set $screen_internal   "eDP-1"
 set $screen_external_1 "DP-1-1"
 set $screen_external_2 "DP-1-2"
 
@@ -178,6 +179,7 @@ workspace $workspace1_terminal     output $screen_external_1
 workspace $workspace2_mail         output $screen_external_1
 workspace $workspace3_code         output $screen_external_1
 workspace $workspace4_browser      output $screen_external_2
+workspace $workspace10	           output $screen_internal
 
 #############################################
 #               Windows-specific            #
