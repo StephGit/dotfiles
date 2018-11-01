@@ -52,12 +52,12 @@ bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 bindsym $mod+XF86AudioMute      exec pavucontrol
 
 # Open arandr/nvidia settings
-bindsym XF86Display        exec arandr
-bindsym Shift+XF86Display  exec nvidia-settings
+bindsym XF86Display       	exec arandr
+bindsym Shift+XF86Display  	exec nvidia-settings
 
 # change displaymode
 bindsym $mod+m                  exec $HOME/.screenlayout/display_layout.sh
-bindsym $mod+i		   exec $HOME/.screenlayout/1internal_eDP-1.sh
+bindsym $mod+i		   	exec $HOME/.screenlayout/1internal_eDP-1.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -176,10 +176,10 @@ set $screen_external_1 "DP-1-1"
 set $screen_external_2 "DP-1-2"
 
 workspace $workspace1_terminal     output $screen_external_1
-workspace $workspace2_mail         output $screen_external_1
+workspace $workspace2_mail         output $screen_internal
 workspace $workspace3_code         output $screen_external_1
 workspace $workspace4_browser      output $screen_external_2
-workspace $workspace10	           output $screen_internal
+workspace $workspace7_keypass      output $screen_internal
 
 #############################################
 #               Windows-specific            #
