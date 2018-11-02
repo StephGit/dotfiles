@@ -1,0 +1,27 @@
+[alias]
+	co = checkout
+	ci = commit
+	cm = commit
+	st = status
+	s = status
+	ad = add
+	df = diff
+	dfc = diff --cached
+	br = branch
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	subup = submodule update --init --recursive
+	subst = submodule status --recursive
+[push]
+	default = simple
+[user]
+	name = Stephan Girod <extern>
+	email = stephan.girod@mobi.ch
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+        ui = true
+        pager = true
