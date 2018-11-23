@@ -1,10 +1,3 @@
-# Path to Oh My Fish install.
-set -q XDG_DATA_HOME
-  and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
-  or set -gx OMF_PATH "$HOME/.local/share/omf"
-
-# Load Oh My Fish configuration.
-source $OMF_PATH/init.fish
 # dotfiles related stuff
 set -gx PATH $PATH ~/.dotfiles/bin
 
@@ -30,13 +23,11 @@ git config --global alias.subst "submodule status --recursive"
 git config --global alias.s "status"
 git config --global alias.br "branch"
 git config --global alias.f "fetch"
-git config --global alias.d "diff"
+# git config --global alias.d "diff"
 git config --global alias.dc "diff --cached"
-# git config --global alias.dt "difftool -y"
+git config --global alias.dt "difftool -y"
 # git config --global alias.dtc "difftool --cached -y"
 git config --global alias.up "pull --rebase"
-# git config --global alias.co "checkout"
-# git config --global alias.ci "commit"
 git config --global alias.rb "rebase"
 git config --global alias.lol "log --graph --pretty=oneline --abbrev-commit --decorate"
 git config --global alias.lola "log --graph --pretty=oneline --abbrev-commit --decorate --all"
@@ -75,17 +66,6 @@ abbr -a gau="git add -u :/"
 abbr -a ga="git add "
 abbr -a stash="git stash "
 abbr -a pop="git stash pop"
-
-
-# Add all files by default
-function gaa
-  set arg $argv .
-  git add "$argv"
-end
-
-# Ruby enVironment Manager
-# rvm default
-# rvm use 2.2
 
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
