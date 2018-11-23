@@ -51,14 +51,7 @@ unset INIT_DIR
 export HOME=$HOME_DIR
 cd $HOME_DIR
 
-
-export NVM_DIR="/home/sgirod/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export PATH=/opt/apps/sdk-tools-linux-4333796/tools:/opt/apps/sdk-tools-linux-4333796/tools/bin:$PATH
-
-#exec fish
-#fish
 
 #bash coloring
 PS1='\[\e[32m\u\] \[\e[36m\w\] \[\e[33m\]\:[\e[1m\] b$ \[\e[0m\]'
@@ -66,7 +59,5 @@ PS1='\[\e[32m\u\] \[\e[36m\w\] \[\e[33m\]\:[\e[1m\] b$ \[\e[0m\]'
 #bash prompt
 PS1='\u \w $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p") b$ '
  
-#set alias for oracle-servers
-alias oracleep="ssh oracle@oracle.ep4.puzzle.ch"
-alias oraclerz="ssh oracle@lexingtoni.rz.puzzle.ch"
+src
 
