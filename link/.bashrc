@@ -24,6 +24,7 @@ function src() {
 
 # Run dotfiles script, then source.
 function dotfiles() {
+  echo 'running dotfiles'
   $DOTFILES/bin/dotfiles "$@" -a src
 }
 
