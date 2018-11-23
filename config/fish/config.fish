@@ -18,15 +18,11 @@ git config --global alias.ad add
 git config --global alias.br branch
 git config --global alias.subup "submodule update --init --recursive"
 git config --global alias.subst "submodule status --recursive"
-
-# NDBJS git alias
 git config --global alias.s "status"
 git config --global alias.br "branch"
 git config --global alias.f "fetch"
-# git config --global alias.d "diff"
-git config --global alias.dc "diff --cached"
 git config --global alias.dt "difftool -y"
-# git config --global alias.dtc "difftool --cached -y"
+git config --global alias.dtc "difftool --cached -y"
 git config --global alias.up "pull --rebase"
 git config --global alias.rb "rebase"
 git config --global alias.lol "log --graph --pretty=oneline --abbrev-commit --decorate"
@@ -67,14 +63,18 @@ abbr -a ga="git add "
 abbr -a stash="git stash "
 abbr -a pop="git stash pop"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 263f573... removed unused stuff from config.fish
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
 # vim related stuff
-#alias vi="vim"
-#alias vim="nvim -p"
+alias vi="vim"
+alias vim="nvim -p"
 set -x EDITOR vi
-set -x VISUAL_EDITOR gedit
+set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
