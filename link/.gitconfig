@@ -15,9 +15,6 @@
 	subst = submodule status --recursive
 [push]
 	default = simple
-[user]
-	name = Stephan Girod <extern>
-	email = stephan.girod@mobi.ch
 [color]
         diff = auto
         status = auto
