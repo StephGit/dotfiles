@@ -3,7 +3,6 @@
 set -e 
 
 function find_default_monitor {
-  CONNECTED_MONITORS=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
   for monitor in $CONNECTED_MONITORS; do
     if [ $monitor == "eDP-1" ] || [ $monitor == "LVDS-1" ];
     then
@@ -14,6 +13,8 @@ function find_default_monitor {
   done
 }
 
+# store connected monitors
+CONNECTED_MONITORS=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
 
 # This variables are used as keys in the associative arrays below
 MONITOR_INTERNAL=INTERNAL
@@ -60,7 +61,7 @@ function is_monitor_active {
 }
 
 function is_screen_connected {
-    ! xrandr | grep "$1 " | grep disconnected
+    xrandr | grep "$1 " | grep connected
 }
 
 # Iterate over all keys [HDMI, DP, TB INTERNAL]
