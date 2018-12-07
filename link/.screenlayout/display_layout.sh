@@ -57,7 +57,7 @@ function do_activate_monitor {
 }
 
 function is_monitor_active {
-    [ $MONITOR == "$1" ]
+    [ "$MONITOR" == "$1" ]
 }
 
 function is_screen_connected {
