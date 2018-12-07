@@ -273,7 +273,7 @@ exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id intellij
+# exec_always --no-startup-id intellij
 exec_always --no-startup-id i3-sensible-terminal
 exec_always --no-startup-id chromium-browser
 exec_always --no-startup-id thunderbird
