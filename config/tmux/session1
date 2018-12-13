@@ -1,0 +1,8 @@
+new -s session1 'watch -d -n 1 kubectl get pods'
+split-window -v -p 70 'htop'
+selectp -t 0
+split-window -h 'watch -d -n 1 kubectl get service'
+selectp -t 2
+split-window -v -p 95
+split-window -h
+
