@@ -10,7 +10,7 @@ is_closed(){
 
 # either create it or attach to it
 if is_closed ; then
-  tmux source-file ~/.config/tmux/$sess
+  tmux start-server \; source-file ~/.config/tmux/$sess
   tmux attach -t $sess
 else
   tmux attach -t $sess
