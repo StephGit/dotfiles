@@ -8,29 +8,29 @@ function x
     for f in $argv
       switch "$f"
         case '*.tar.bz2'
-        tar xvjf $f
+          tar xvjf $f ;;
         case '*.tar.gz'
-         tar xvzf $f
+         tar xvzf $f ;;
         case '*.bz2'
-          bunzip2 $f
+          bunzip2 $f ;;
         case '*.rar'
-          unrar x $f
+          unrar x $f ;;
         case '*.gz'
-          gunzip $f
+          gunzip $f ;;
         case '*.tar'
-          tar xvf $f
+          tar xvf $f ;;
         case '*.tbz2'
-          tar xvjf $f
+          tar xvjf $f ;;
         case '*.tgz'
-          tar xvzf $f
+          tar xvzf $f ;;
         case '*.zip'
-          unzip $f
+          unzip $f ;;
         case '*.Z'
-          uncompress $f
+          uncompress $f ;;
         case '*.7z'
-          7z x $f
+          7z x $f ;;
         case '*'
-          echo "'$f' cannot be extracted via extract"
+          echo "'$f' cannot be extracted via extract" ;;
       end
     end
   else
