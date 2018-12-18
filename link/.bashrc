@@ -54,10 +54,10 @@ cd $HOME_DIR
 export PATH=/opt/apps/sdk-tools-linux-4333796/tools:/opt/apps/sdk-tools-linux-4333796/tools/bin:$PATH
 
 #bash coloring
-PS1='\[\e[32m\u\] \[\e[36m\w\] \[\e[33m\]\:[\e[1m\] b$ \[\e[0m\]'
+#PS1='\[\e[32m\u\] \[\e[36m\w\] \[\e[33m\]\:[\e[1m\] b$ \[\e[0m\]'
 
 #bash prompt
-PS1='\u \w $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p") b$ '
+#PS1='\u \w $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p") b$ '
  
 src
 
