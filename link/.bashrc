@@ -51,13 +51,15 @@ unset INIT_DIR
 export HOME=$HOME_DIR
 cd $HOME_DIR
 
-export PATH=/opt/apps/sdk-tools-linux-4333796/tools:/opt/apps/sdk-tools-linux-4333796/tools/bin:$PATH
+#ssh-add
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+	  eval `ssh-agent`
+	    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
 
-#bash coloring
-#PS1='\[\e[32m\u\] \[\e[36m\w\] \[\e[33m\]\:[\e[1m\] b$ \[\e[0m\]'
-
-#bash prompt
-#PS1='\u \w $(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p") b$ '
- 
 src
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
