@@ -32,7 +32,7 @@ If the backlight-controls are not working, even with xbacklight or light or what
 ls /sys/class/backlight/
 intel_backlight@
 ```
-2. Create the file '/usr/share/X11/xorg.conf.d/20-intel.conf':
+2. Create the file `/usr/share/X11/xorg.conf.d/20-intel.conf`:
 ```bash
 Section "Device"
         Identifier  "card0"
