@@ -5,6 +5,11 @@ export DOTFILES=~/.dotfiles
 PATH=$DOTFILES/bin:$PATH
 export PATH
 
+# functionallity for the 'sm' command, that let's one switch
+# the user but keeping it's own environment
+export INIT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # dir this script is in
+export HOME_DIR=$(eval echo ~$(id -un)) # home dir of current user
+
 # Source all files in "source"
 function src() {
   local file
@@ -21,11 +26,6 @@ function src() {
 function dotfiles() {
   $DOTFILES/bin/dotfiles "$@" -a src
 }
-
-# functionallity for the 'sm' command, that let's one switch
-# the user but keeping it's own environment
-export INIT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"	# dir this script is in
-export HOME_DIR=$(eval echo ~$(id -un))	# home dir of current user
 
 # make sure to use right history file
 HISTFILE=$HOME_DIR/.bash_history
@@ -47,18 +47,17 @@ if [ -r $INIT_DIR/.tmux.conf ]; then
   alias tmux="HOME=$INIT_DIR tmux -f $INIT_DIR/.tmux.conf"
 fi
 
-unset INIT_DIR
 export HOME=$HOME_DIR
-cd $HOME_DIR
 
 #ssh-add
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+if [ ! -S $INIT_DIR/.ssh/ssh_auth_sock ]; then
 	  eval `ssh-agent`
-	    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+	    ln -sf "$SSH_AUTH_SOCK" $INIT_DIR/.ssh/ssh_auth_sock
 fi
-
 src
 
+cd $HOME
+unset INIT_DIR
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -5,9 +5,9 @@ if [ -f $INIT_DIR/.bashrc_local ]; then
 fi
 
 ## Source bash completion stuff
-#if [ -f /etc/bash_completion ]; then
-# source /etc/bash_completion
-#fi
+if [ -f /etc/bash_completion ]; then
+ source /etc/bash_completion
+fi
 
 set -o notify # Report status of terminated bg jobs immediately
 
