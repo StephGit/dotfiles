@@ -48,6 +48,9 @@ bindsym XF86AudioLowerVolume    exec $HOME/.dotfiles/util/audio/lower-volume.sh
 # Toggle sound
 bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 
+# Toggle mic
+bindsym XF86AudioMicMute	exec $HOME/.dotfiles/util/audio/toggle-mic.sh
+
 # Open volume control for the pulse audio sound server
 bindsym $mod+XF86AudioMute      exec pavucontrol
 
@@ -132,7 +135,7 @@ set $workspace6_misc "6 "
 set $workspace7_keypass "7 "
 set $workspace8 "8 "
 set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace10_music "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1_terminal
@@ -144,7 +147,7 @@ bindsym $mod+6 workspace $workspace6_misc
 bindsym $mod+7 workspace $workspace7_keypass
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+bindsym $mod+0 workspace $workspace10_music
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1_terminal
@@ -156,7 +159,7 @@ bindsym $mod+Shift+6 move container to workspace $workspace6_misc
 bindsym $mod+Shift+7 move container to workspace $workspace7_keypass
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+0 move container to workspace $workspace10_music
 
 # move to previous / next workspace
 bindsym $mod+Prior              workspace prev
@@ -194,6 +197,7 @@ assign [class="Chromium"]       $workspace4_browser
 assign [class="jetbrains-idea"] $workspace3_code
 assign [class="keepassxc"]      $workspace7_keypass
 assign [class="Wfica"] 		$workspace9
+assign [class="vlc"]		$workspace10_music
 
 for_window [instance="pavucontrol"] floating enable
 
