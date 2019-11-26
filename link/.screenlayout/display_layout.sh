@@ -38,7 +38,7 @@ declare -A monitor_screens
 monitor_screens=([$MONITOR_INTERNAL]=$SCREEN_INTERNAL [$MONITOR_HDMI]=$SCREEN_HDMI [$MONITOR_THUNDERBOLT]=$SCREEN_TB [$MONITOR_THUNDERBOLT_2]=$SCREEN_TB_2)
 
 declare -A monitor_scripts
-monitor_scripts=([$MONITOR_INTERNAL]="1internal_$SCREEN_INTERNAL.sh" [$MONITOR_HDMI]="1external_hdmi.sh" [$MONITOR_THUNDERBOLT]="1internal_2external.sh" [$MONITOR_THUNDERBOLT_2]="2external_mb.sh")
+monitor_scripts=([$MONITOR_INTERNAL]="1internal_$SCREEN_INTERNAL.sh" [$MONITOR_HDMI]="1external_hdmi.sh" [$MONITOR_THUNDERBOLT]="2external.sh" [$MONITOR_THUNDERBOLT_2]="2external_mb.sh")
 
 function do_activate_monitor {
     monitor_to_activate=$1

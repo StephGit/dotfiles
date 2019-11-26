@@ -56,6 +56,9 @@ if [ ! -S $INIT_DIR/.ssh/ssh_auth_sock ]; then
 fi
 src
 
+#keychain id_rsa
+#. ~/.keychain/`uname -n`-sh
+
 cd $HOME
 unset INIT_DIR
 
