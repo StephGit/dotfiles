@@ -63,10 +63,6 @@ abbr -a ga="git add "
 abbr -a stash="git stash "
 abbr -a pop="git stash pop"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 263f573... removed unused stuff from config.fish
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
@@ -79,3 +75,4 @@ set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
 end
+

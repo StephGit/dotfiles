@@ -69,9 +69,6 @@ bindsym Shift+XF86Display  	exec nvidia-settings
 bindsym $mod+m                  exec $HOME/.screenlayout/display_layout.sh
 bindsym $mod+i		   	exec $HOME/.screenlayout/1internal_eDP-1.sh
 
-# toggle internal screen
-bindsym $mod+i              exec $HOME/.screenlayout/internal_off_LVDS-1.sh
-
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
 bindsym XF86MonBrightnessDown   exec "xbacklight -10"
@@ -283,7 +280,7 @@ exec_always --no-startup-id KeePassXC
 #                 i3-bar                    #
 #############################################
 bar {
-  status_command       i3status
+    status_command     i3status
     position           top
     workspace_buttons  yes
     tray_output        primary
