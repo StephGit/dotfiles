@@ -16,6 +16,8 @@
 * [Arc GTK Theme](https://github.com/horst3180/Arc-theme) 
 * [Moka Icon Theme](https://snwh.org/moka)
 * [Compton](https://github.com/chjj/compton), provides compositing functionality
+* [i3blocks] (https://github.com/vivien/i3blocks) use blocks for more i3bar customisation 
+
 
 # Nautilus 
 To disable the nautilus desktop window, use:
