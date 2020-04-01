@@ -274,7 +274,7 @@ exec_always --no-startup-id intellij
 exec_always --no-startup-id i3-sensible-terminal
 exec_always --no-startup-id chromium-browser
 exec_always --no-startup-id thunderbird
-exec_always --no-startup-id KeePassXC
+exec_always --no-startup-id keepassxc
 
 #############################################
 #                 i3-bar                    #
