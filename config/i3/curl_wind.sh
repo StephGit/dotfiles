@@ -1,6 +1,6 @@
 #!/bin/bash
 
-YV="http://yvbeach.com/yvmeteo.htm"
+YV="https://yvbeach.com/yvmeteo.htm"
 WSCT="http://thunerwetter.ch/wsct_wind.html"
 
 function get_yv_data {
