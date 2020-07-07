@@ -11,7 +11,6 @@ function get_yv_data {
 
 function get_wsct_data {
   local LINES=$( curl $WSCT -s | grep 'km/h\|aus' )
-  echo $LINES
   WSCT_WIND=$( echo $LINES | grep -oP "\\d*\\.\\d" | tr '\n' ' ' )
   WSCT_DEG=$( echo $LINES | grep 'aus' | grep -oP "[A-Z]*")
 }
