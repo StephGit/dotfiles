@@ -1,6 +1,6 @@
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="yellow"; fi
+if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR=011; fi
 
-PROMPT='%{$fg[$NCOLOR]%}%n%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} $(git_super_status)%{$fg[yellow]%}%(!.#.$)%{$reset_color%} %{$fg[blue]%}%'
+PROMPT='%F{011}%n%{$reset_color%} %F{#7aa6da}%~%{$reset_color%} $(git_super_status) %F{011}%(!.#.$)%{$reset_color%} '
 RPROMPT=''
 
 # git-prompt plugin theming
@@ -9,9 +9,9 @@ RPROMPT=''
 # ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 # ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
 # ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%F{#ffff87}%{●%G%}"
 # ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
-# ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%F{011}%{✚%G%}"
 # ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
 # ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
 # ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
