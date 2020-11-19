@@ -1,0 +1,35 @@
+export DOTFILES=~/.dotfiles
+
+# set PATH so it includes user's private bin directories
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# Add binaries into the path
+PATH=$DOTFILES/bin:$PATH
+export PATH
+
+# source nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Source all files in "source"
+function src() {
+  local file
+  if [[ "$1" ]]; then
+    source "$DOTFILES/source/$1.sh"
+  else
+    for file in $DOTFILES/source/*; do
+      source "$file"
+    done
+  fi
+}
+
+export INIT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#ssh-add
+if [ ! -S $INIT_DIR/.ssh/ssh_auth_sock ]; then
+	  eval `ssh-agent`
+	    ln -sf "$SSH_AUTH_SOCK" $INIT_DIR/.ssh/ssh_auth_sock
+fi
+
+unset INIT_DIR
+
+src

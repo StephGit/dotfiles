@@ -4,23 +4,8 @@ if [ -f $INIT_DIR/.bashrc_local ]; then
   . $INIT_DIR/.bashrc_local
 fi
 
-## Source bash completion stuff
-if [ -f /etc/bash_completion ]; then
- source /etc/bash_completion
-fi
 
 set -o notify # Report status of terminated bg jobs immediately
-
-shopt -s extglob # extended pattern matching features
-shopt -s cdspell # correct dir spelling errors on cd
-shopt -s lithist # save multi-line commands with newlines
-shopt -s autocd # if a command is a dir name, cd to it
-shopt -s checkjobs # print warning if jobs are running on shell exit
-shopt -s dirspell # correct dir spelling errors on completion
-shopt -s globstar # ** matches all files, dirs and subdirs
-shopt -s cmdhist # save multi-line commands in a single hist entry
-shopt -s checkwinsize # check the window size after each command
-shopt -s no_empty_cmd_completion # don't try to complete empty cmds
 
 #coloured man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
