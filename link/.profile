@@ -13,3 +13,11 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# set PATH so it includes user's private bin directories
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# source nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PATH=/opt/apps/sdk-tools-linux-4333796/tools:/opt/apps/sdk-tools-linux-4333796/tools/bin:$PATH

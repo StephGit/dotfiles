@@ -9,7 +9,7 @@ ZSH_THEME="cleaned"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git oc zsh-completions zsh-syntax-highlighting)	
+plugins=(git git-prompt  oc zsh-completions zsh-syntax-highlighting)	
 
 autoload -U compinit && compinit
 

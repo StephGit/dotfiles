@@ -1,12 +1,21 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="yellow"; fi
 
-PROMPT='%{$fg[$NCOLOR]%}%n%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} $(git_prompt_info)%{$fg[yellow]%}%(!.#.$)%{$reset_color%} '
+PROMPT='%{$fg[$NCOLOR]%}%n%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} $(git_super_status)%{$fg[yellow]%}%(!.#.$)%{$reset_color%} %{$fg[blue]%}%'
+RPROMPT=''
 
-# git theming
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}(%{$fg_no_bold[yellow]%}%B"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg[white]%})%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_CLEAN=" ${FG[040]}✔"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✗"
+# git-prompt plugin theming
+# uncomment to customize these defaults
+# ZSH_THEME_GIT_PROMPT_PREFIX="("
+# ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+# ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+# ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}%{●%G%}"
+# ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+# ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+# ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
+# ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
+# ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 
 # LS colors, made with https://geoff.greer.fm/lscolors/
 export LSCOLORS="Gxfxcxdxbxegedabagacad"

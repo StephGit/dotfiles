@@ -23,13 +23,4 @@ function src() {
   fi
 }
 
-export INIT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-#ssh-add
-if [ ! -S $INIT_DIR/.ssh/ssh_auth_sock ]; then
-	  eval `ssh-agent`
-	    ln -sf "$SSH_AUTH_SOCK" $INIT_DIR/.ssh/ssh_auth_sock
-fi
-
-unset INIT_DIR
-
 src
