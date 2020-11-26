@@ -1,12 +1,14 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR=011; fi
 
-PROMPT='%F{011}%n%{$reset_color%} %F{#7aa6da}%~%{$reset_color%} $(git_super_status) %F{011}%(!.#.$)%{$reset_color%} '
+MYELLOW="#ffff87"
+
+PROMPT='%F{011}%n%{$reset_color%} %F{#7aa6da}%3~%{$reset_color%} $(git_super_status)%F{011}%(!.#.$)%{$reset_color%} '
 RPROMPT=''
 
 # git-prompt plugin theming
 # uncomment to customize these defaults
 # ZSH_THEME_GIT_PROMPT_PREFIX="("
-# ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_SUFFIX=") "
 # ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
 # ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%F{#ffff87}%{●%G%}"

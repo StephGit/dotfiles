@@ -46,4 +46,6 @@ source <(oc311 completion zsh)
 # fpath=( $DOTFILES/config/zsh/functions "${fpath[@]}" )
 # autoload -Uz $fpath[1]/*(.:t)
 
-
+alias oc="oc311"
+alias vi="vim"
+alias vim="nvim -p"

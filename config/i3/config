@@ -194,7 +194,7 @@ workspace $workspace9	           output $screen_external_2
 assign [class="x-terminal-emulator"]            $workspace1_terminal
 assign [class="Thunderbird"]                    $workspace2_mail
 assign [class="Firefox"]                        $workspace4_browser
-assign [class="Chromium"]                       $workspace4_browser
+assign [class="brave-browser"]                  $workspace4_browser
 assign [class="jetbrains-idea"]                 $workspace3_code
 assign [class="KeePassXC"]                      $workspace7_keypass
 assign [class="Wfica"]                          $workspace9
