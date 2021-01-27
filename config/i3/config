@@ -194,7 +194,7 @@ workspace $workspace9	           output $screen_external_2
 assign [class="x-terminal-emulator"]            $workspace1_terminal
 assign [class="Thunderbird"]                    $workspace2_mail
 assign [class="Firefox"]                        $workspace4_browser
-assign [class="brave-browser"]                  $workspace4_browser
+assign [class="Brave-browser"]                  $workspace4_browser
 assign [class="jetbrains-idea"]                 $workspace3_code
 assign [class="KeePassXC"]                      $workspace7_keypass
 assign [class="Wfica"]                          $workspace9
@@ -274,7 +274,7 @@ exec --no-startup-id xautolock -time 3 -locker "$Locker"
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id intellij
 exec_always --no-startup-id i3-sensible-terminal
-exec_always --no-startup-id chromium-browser
+exec_always --no-startup-id brave-browser
 exec_always --no-startup-id thunderbird
 exec_always --no-startup-id keepassxc
 

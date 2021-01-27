@@ -9,12 +9,10 @@ ZSH_THEME="cleaned"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt  oc zsh-completions zsh-syntax-highlighting)	
-
-autoload -U compinit && compinit
+plugins=(git git-prompt zsh-syntax-highlighting)	
 
 source $ZSH/oh-my-zsh.sh
-source <(oc311 completion zsh)
+
 
 # User configuration
 
@@ -46,6 +44,8 @@ source <(oc311 completion zsh)
 # fpath=( $DOTFILES/config/zsh/functions "${fpath[@]}" )
 # autoload -Uz $fpath[1]/*(.:t)
 
-alias oc="oc311"
 alias vi="vim"
 alias vim="nvim -p"
+
+source <(oc completion zsh)
+
