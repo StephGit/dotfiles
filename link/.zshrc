@@ -49,3 +49,7 @@ alias vim="nvim -p"
 
 source <(oc completion zsh)
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/sgirod/.sdkman"
+[[ -s "/home/sgirod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sgirod/.sdkman/bin/sdkman-init.sh"
