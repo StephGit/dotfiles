@@ -12,7 +12,7 @@ ZSH_THEME="cleaned"
 plugins=(git git-prompt zsh-syntax-highlighting)	
 
 source $ZSH/oh-my-zsh.sh
-
+source ~/repos/acrevis/misc/deploy-all/.aliases/.depman_aliases
 
 # User configuration
 
