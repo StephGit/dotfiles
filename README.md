@@ -8,9 +8,11 @@ bash -c "$(curl -fsSL https://raw.github.com/StephGit/dotfiles/master/bin/dotfil
 
 - [neovim](https://github.com/neovim/neovim)
 - [termite](https://github.com/thestinger/termite)
--   `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"` 
--   `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting` 
--   `ln -s ~/.dotfiles/config/zsh/cleaned.zsh-theme $ZSH_CUSTOM/cleaned.zsh-theme` 
+- ZSH 
+  *`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"` 
+  * `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting` 
+  * `ln -s ~/.dotfiles/config/zsh/cleaned.zsh-theme $ZSH_CUSTOM/cleaned.zsh-theme` 
+  *  chsh -s /bin/zsh 
 - [nvm](https://github.com/creationix/nvm)
 
 ## Enable deoplete
