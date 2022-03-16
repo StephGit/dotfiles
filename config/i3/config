@@ -49,25 +49,24 @@ bindsym $mod+Shift+KP_Add       exec $HOME/.dotfiles/util/audio/raise-volume.sh
 bindsym XF86AudioLowerVolume    exec $HOME/.dotfiles/util/audio/lower-volume.sh
 bindsym $mod+Shift+KP_Subtract  exec $HOME/.dotfiles/util/audio/lower-volume.sh
 
-
 # Toggle sound
 bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
-bindsym $mod+Shift+a		exec $HOME/.dotfiles/util/audio/toggle-audio.sh
+bindsym $mod+Shift+a		        exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 
 # Toggle mic
-bindsym XF86AudioMicMute	exec $HOME/.dotfiles/util/audio/toggle-mic.sh
-bindsym $mod+Shift+m		exec $HOME/.dotfiles/util/audio/toggle-mic.sh
+bindsym XF86AudioMicMute	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
+bindsym $mod+Shift+m	  	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 
 # Open volume control for the pulse audio sound server
-bindsym $mod+XF86AudioMute      exec pavucontrol
+bindsym $mod+Shift+s            exec pavucontrol
 
 # Open arandr/nvidia settings
-bindsym XF86Display       	exec arandr
-bindsym Shift+XF86Display  	exec nvidia-settings
+bindsym XF86Display           	exec arandr
+bindsym Shift+XF86Display  	    exec nvidia-settings
 
 # change displaymode
 bindsym $mod+m                  exec $HOME/.screenlayout/display_layout.sh
-bindsym $mod+i		   	exec $HOME/.screenlayout/1internal_eDP-1.sh
+bindsym $mod+i		   	          exec $HOME/.screenlayout/1internal_eDP-1.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -179,8 +178,8 @@ set $default "eDP-1"
 
 workspace $workspace1_terminal     output $screen_external_2 $home_hdmi
 workspace $workspace2_mail         output $screen_external_1 $default
-workspace $workspace3_code         output $screen_external_1 $home_hdmi
-workspace $workspace4_browser      output $screen_external_2 $default
+workspace $workspace3_code         output $screen_external_2 $home_hdmi
+workspace $workspace4_browser      output $screen_external_1 $default
 workspace $workspace7_keypass      output $screen_external_1 $home_hdmi
 workspace $workspace9	           output $screen_external_2 
 
