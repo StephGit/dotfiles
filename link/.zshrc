@@ -3,16 +3,17 @@
 export ZSH="/home/sgirod/.oh-my-zsh"
 
 # Set name of the theme to load 
-ZSH_THEME="cleaned"
+ZSH_THEME="cleaned" 
+#ZSH_THEME="af-magic" # fallback theme
 
-
+alias python=/usr/bin/python3
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git git-prompt zsh-syntax-highlighting)	
 
 source $ZSH/oh-my-zsh.sh
-source ~/repos/acrevis/misc/deploy-all/.aliases/.depman_aliases
+source ~/repos/dpl/misc/deploy-all/.aliases/.depman_aliases
 
 # User configuration
 
@@ -53,3 +54,5 @@ source <(oc completion zsh)
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/sgirod/.sdkman"
 [[ -s "/home/sgirod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sgirod/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

@@ -1,4 +1,19 @@
-# Required Packages for i3 config
+# i3
+
+Install latest i3-Window Manager (Ubuntu repos often not up-to-date):
+
+Get it [here](https://i3wm.org/docs/repositories.html) 
+
+
+## Required Packages for i3 config
+
+```
+sudo apt update
+sudo apt install i3status i3lock redshift pulseaudio xbacklight xautolock rofi numlockx flameshot fonts-font-awesome feh
+``` 
+
+* i3status
+* i3blocks -> Install it manually to make i3blocks work properly -> see https://github.com/vivien/i3blocks#installation
 * [redshift](https://github.com/jonls/redshift), color correction
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/), volume control
 * xbacklight, adjust backlight brightness using RandR extension
@@ -8,16 +23,17 @@
 * numlockx, turn numlock on at login
 * flameshot, screenshot utility
 
-# Required / Suggestions for look & feel
-* [Font Awesome](http://fontawesome.io/), vector font, used for icons in i3status bar
+## Required / Suggestions for look & feel
+
+
+* fonts-font-awesome 
 * [Yosemite San Francisco Font](https://github.com/supermarin/YosemiteSanFranciscoFont), install this font to ~/.fonts
 * [feh](https://github.com/derf/feh), an image viewer. in the config feh is used to set the wallpaper (default: ~/Pictures/wallpaper.jpg)
-* [Arc Firefox Theme](https://github.com/horst3180/arc-firefox-theme)
 * [Arc GTK Theme](https://github.com/horst3180/Arc-theme) 
 * [Moka Icon Theme](https://snwh.org/moka)
 * [Compton](https://github.com/chjj/compton), provides compositing functionality
 
-# Nautilus 
+## Nautilus 
 To disable the nautilus desktop window, use:
 `gsettings set org.gnome.desktop.background show-desktop-icons false`
 
