@@ -171,8 +171,8 @@ bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
-set $screen_external_1 "DP-1-2"
-set $screen_external_2 "DP-1-3"
+set $screen_external_1 "DP-3-2"
+set $screen_external_2 "DP-3-3"
 set $home_hdmi "HDMI-2"
 set $default "eDP-1"
 
@@ -197,7 +197,7 @@ assign [class="Brave-browser"]                  $workspace4_browser
 assign [class="jetbrains-idea"]                 $workspace3_code
 assign [class="KeePassXC"]                      $workspace7_keypass
 assign [class="Wfica"]                          $workspace9
-assign [class="vlc"]	                        $workspace10_music
+assign [class="vlc"]	                          $workspace10_music
 
 for_window [instance="pavucontrol"] floating enable
 
