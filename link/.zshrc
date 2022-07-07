@@ -14,6 +14,7 @@ plugins=(git git-prompt zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source ~/repos/dpl/misc/deploy-all/.aliases/.depman_aliases
+source ~/repos/dpl/all-acrevis/.aliases/.adapter_aliases
 
 # User configuration
 

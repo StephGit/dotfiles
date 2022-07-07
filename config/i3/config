@@ -181,7 +181,7 @@ workspace $workspace2_mail         output $screen_external_1 $default
 workspace $workspace3_code         output $screen_external_2 $home_hdmi
 workspace $workspace4_browser      output $screen_external_1 $default
 workspace $workspace7_keypass      output $screen_external_1 $home_hdmi
-workspace $workspace9	           output $screen_external_2 
+workspace $workspace9	             output $screen_external_2 
 
 #############################################
 #               Windows-specific            #
