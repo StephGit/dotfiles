@@ -53,6 +53,8 @@ unset INIT_DIR
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+export CHROME_BIN=export CHROME_BIN=/usr/bin/chromium-browser
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/sgirod/.sdkman"
 [[ -s "/home/sgirod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sgirod/.sdkman/bin/sdkman-init.sh"
