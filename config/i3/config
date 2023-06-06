@@ -43,7 +43,7 @@ bindsym $mod+d         exec "rofi -show run"
 bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
-# Volume control, using pulse audio
+# Volume control, using pipewire
 bindsym XF86AudioRaiseVolume    exec $HOME/.dotfiles/util/audio/raise-volume.sh
 bindsym $mod+Shift+KP_Add       exec $HOME/.dotfiles/util/audio/raise-volume.sh
 bindsym XF86AudioLowerVolume    exec $HOME/.dotfiles/util/audio/lower-volume.sh
@@ -57,7 +57,10 @@ bindsym $mod+Shift+a		        exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 bindsym XF86AudioMicMute	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 bindsym $mod+Shift+m	  	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 
-# Open volume control for the pulse audio sound server
+# Enable bluetooth headset
+bindsym $mod+Shift+b            exec $HOME/.dotfiles/util/audio/toggle-bluetooth-headset.sh
+
+# Open volume control for the pipewire sound server
 bindsym $mod+Shift+s            exec pavucontrol
 
 # Open arandr/nvidia settings
@@ -168,7 +171,6 @@ bindsym $mod+Control+Right      workspace next
 bindsym $mod+Shift+Prior        move container to workspace prev
 bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
-bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
 set $screen_external_1 "DP-3-2"

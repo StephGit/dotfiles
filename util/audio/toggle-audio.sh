@@ -3,7 +3,7 @@
 pulseaudio
 
 # Get a a list of all sinks
-sinks=$(pacmd list-sinks | grep index | cut -d':' -f2 | cut -d' ' -f2)
+sinks=$(pactl list short sinks | cut -f 2)
 
 for sink in $sinks; do
   cmd="pactl set-sink-mute $sink toggle"
