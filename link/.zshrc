@@ -48,7 +48,7 @@ source ~/repos/dpl/all-acrevis/.aliases/.adapter_aliases
 
 alias vi="vim"
 alias vim="nvim -p"
-
+alias freerdp="flatpak run com.freerdp.FreeRDP"
 source <(oc completion zsh)
 
 
@@ -57,3 +57,11 @@ export SDKMAN_DIR="/home/sgirod/.sdkman"
 [[ -s "/home/sgirod/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sgirod/.sdkman/bin/sdkman-init.sh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/sgirod/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

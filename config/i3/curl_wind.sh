@@ -1,7 +1,14 @@
 #!/bin/bash
 
+SB="http://webcam.ichtus.ch:8888/WebApiCoreIchtus/LetsKiteValue"
 YV="https://yvbeach.com/yvmeteo.htm"
 WSCT="http://thunerwetter.ch/wsct_wind.html"
+
+function get_sb_data {
+  local LINES=$( curl $SB -s )
+  SB_WIND=$( echo $LINES | jq '((.windSpeedKnotsIchtus|tostring) + " " + (.windSpeedHigh1KnotsIchtus|tostring))' | tr '"' ' ' )
+  SB_DEG=$( echo $LINES | jq '.windDirectionDegreesIchtus' )
+} 
 
 function get_yv_data {
   local LINES=$( curl $YV -s | grep -i 'km/h\|DIRECTION' )
@@ -61,6 +68,9 @@ function get_dir_icon2 () {
   fi
 }
 
+get_sb_data
+get_dir_icon $SB_DEG
+SB_ICO=$ICO
 get_yv_data
 get_dir_icon $YV_DEG
 YV_ICO=$ICO
@@ -68,6 +78,6 @@ get_wsct_data
 get_dir_icon2 $WSCT_DEG
 WSCT_ICO=$ICO
 
-echo "YV $YV_WIND$YV_ICO TH $WSCT_WIND$WSCT_ICO"
+echo "SB$SB_WIND$SB_ICO YV $YV_WIND$YV_ICO TH $WSCT_WIND$WSCT_ICO"
 
 exit 0

@@ -198,8 +198,10 @@ assign [class="Firefox"]                        $workspace4_browser
 assign [class="Brave-browser"]                  $workspace4_browser
 assign [class="jetbrains-idea"]                 $workspace3_code
 assign [class="KeePassXC"]                      $workspace7_keypass
+assign [class="Gimp-2.10"]                      $workspace8
 assign [class="Wfica"]                          $workspace9
 assign [class="vlc"]	                          $workspace10_music
+
 
 for_window [instance="pavucontrol"] floating enable
 
