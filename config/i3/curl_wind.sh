@@ -6,9 +6,9 @@ WSCT="http://thunerwetter.ch/wsct_wind.html"
 
 function get_sb_data {
   local LINES=$( curl $SB -s )
-  SB_WIND=$( echo $LINES | jq '((.windSpeedKnotsIchtus|tostring) + " " + (.windSpeedHigh1KnotsIchtus|tostring))' | tr '"' ' ' )
+  SB_WIND=$( echo $LINES | jq '((.windSpeedKnotsIchtus*1.852*100|round/100|tostring) + " " + (.windSpeedHigh1KnotsIchtus*1.852*100|round/100|tostring))' | tr '"' ' ' )
   SB_DEG=$( echo $LINES | jq '.windDirectionDegreesIchtus' )
-} 
+}
 
 function get_yv_data {
   local LINES=$( curl $YV -s | grep -i 'km/h\|DIRECTION' )
@@ -78,6 +78,6 @@ get_wsct_data
 get_dir_icon2 $WSCT_DEG
 WSCT_ICO=$ICO
 
-echo "SB$SB_WIND$SB_ICO YV $YV_WIND$YV_ICO TH $WSCT_WIND$WSCT_ICO"
+echo "🌀 SB$SB_WIND$SB_ICO YV $YV_WIND$YV_ICO TH $WSCT_WIND$WSCT_ICO"
 
 exit 0
