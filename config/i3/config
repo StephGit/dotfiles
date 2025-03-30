@@ -61,7 +61,7 @@ bindsym $mod+Shift+m	  	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 bindsym $mod+Shift+b            exec $HOME/.dotfiles/util/audio/toggle-bluetooth-headset.sh
 
 # Open volume control for the pipewire sound server
-bindsym $mod+Shift+s            exec pavucontrol
+# bindsym $mod+Shift+s            exec pavucontrol
 
 # Open arandr/nvidia settings
 bindsym XF86Display           	exec arandr

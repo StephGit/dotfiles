@@ -46,6 +46,7 @@ source ~/repos/dpl/all-acrevis/.aliases/.adapter_aliases
 # fpath=( $DOTFILES/config/zsh/functions "${fpath[@]}" )
 # autoload -Uz $fpath[1]/*(.:t)
 
+alias docker-compose="docker compose"
 alias vi="vim"
 alias vim="nvim -p"
 alias freerdp="flatpak run com.freerdp.FreeRDP"
