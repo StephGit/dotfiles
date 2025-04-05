@@ -8,15 +8,14 @@ Get it [here](https://i3wm.org/docs/repositories.html)
 ## Required Packages for i3 config
 
 ```
-sudo apt update
-sudo apt install i3status i3lock redshift pulseaudio pavucontrol xbacklight xautolock rofi numlockx flameshot fonts-font-awesome feh lm-sensors
+sudo pacman -S i3status i3lock redshift pulseaudio pavucontrol xautolock rofi numlockx flameshot ttf-nerd-fonts feh
 ``` 
-
+* sysstat acpi alsa-utils
 * i3status
 * i3blocks -> Install it manually to make i3blocks work properly -> see https://github.com/vivien/i3blocks#installation
 * [redshift](https://github.com/jonls/redshift), color correction
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/), volume control
-* xbacklight, adjust backlight brightness using RandR extension
+
 * [i3lock](https://github.com/i3/i3lock), screen locker
 * xautolock, lock screen if there is no activity
 * [rofi](https://github.com/DaveDavenport/rofi), Application launcher and dmenu replacement
@@ -26,7 +25,7 @@ sudo apt install i3status i3lock redshift pulseaudio pavucontrol xbacklight xaut
 ## Required / Suggestions for look & feel
 
 
-* fonts-font-awesome 
+* nerd-fonts->ttf-noto-nerd 
 * [Yosemite San Francisco Font](https://github.com/supermarin/YosemiteSanFranciscoFont), install this font to ~/.fonts
 * [feh](https://github.com/derf/feh), an image viewer. in the config feh is used to set the wallpaper (default: ~/Pictures/wallpaper.jpg)
 * [Arc GTK Theme](https://github.com/horst3180/Arc-theme) 
