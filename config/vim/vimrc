@@ -35,8 +35,6 @@ nmap <F3> :w:Rake SPEC=%:p
 " F4: check linting (see file types below)
 " F5: execute current file
 nmap <F5> :w:!./%
-" F9: Paste toggle
-set pastetoggle=[20~
 " F12: NERDTroggle
 nmap <F11> :NERDTreeTabsClose
 " F12: NERDTroggle
@@ -99,7 +97,7 @@ set softtabstop=2
 set showmode	" portable method to show the current mode on bottom line
 set tabstop=2	" this should be the same as the next line. not always.
 set ts=2	" only indent 2 spaces. see shiftwidth (sw) above.
-set terse	" no news is good news.
+set shm	" no news is good news.
 
 " where to put temporary files. good for most systems
 "set directory=/tmp

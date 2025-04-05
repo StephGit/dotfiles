@@ -1,4 +1,4 @@
-Installation
+Installation for Arch:
 ============
 ```
 bash -c "$(curl -fsSL https://raw.github.com/StephGit/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
@@ -7,7 +7,7 @@ bash -c "$(curl -fsSL https://raw.github.com/StephGit/dotfiles/master/bin/dotfil
 ## Tools
 
 - [neovim](https://github.com/neovim/neovim)
-- [termite](https://github.com/thestinger/termite)
+
 - ZSH
 
   * `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"` 
@@ -17,12 +17,11 @@ bash -c "$(curl -fsSL https://raw.github.com/StephGit/dotfiles/master/bin/dotfil
 - [nvm](https://github.com/creationix/nvm)
 - Python (needed for zsh) 
 
-  * `sudo apt install python3`
-  
+- pacman -S xclip neovim xorg-mkfontscale unzip keepassxc pango fonts-font-awesome  i3 i3status i3lock redshift pulseaudio xautolock rofi numlockx flameshot feh xterm xorg-init dmenu python-pynvim python3
 
 ## Enable deoplete
 
-1. Install [neovim](https://github.com/neovim/neovim)
+1. Install neovim, python3 and python-pynvim via pacman 
 2. open vim
 3. run ':UpdateRemotePlugins'
 

@@ -13,9 +13,6 @@ alias python=/usr/bin/python3
 plugins=(git git-prompt zsh-syntax-highlighting)	
 
 source $ZSH/oh-my-zsh.sh
-source ~/repos/dpl/misc/deploy-all/.aliases/.depman_aliases
-source ~/repos/dpl/all-acrevis/.aliases/.adapter_aliases
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -50,7 +47,7 @@ alias docker-compose="docker compose"
 alias vi="vim"
 alias vim="nvim -p"
 alias freerdp="flatpak run com.freerdp.FreeRDP"
-source <(oc completion zsh)
+#source <(oc completion zsh)
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
