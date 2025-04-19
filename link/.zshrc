@@ -44,8 +44,8 @@ source $ZSH/oh-my-zsh.sh
 # autoload -Uz $fpath[1]/*(.:t)
 
 alias docker-compose="docker compose"
-alias vi="vim"
-alias vim="nvim -p"
+#alias vi="vim"
+#alias vim="nvim -p"
 alias freerdp="flatpak run com.freerdp.FreeRDP"
 #source <(oc completion zsh)
 

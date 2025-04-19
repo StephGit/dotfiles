@@ -9,4 +9,5 @@ Xft.rgba: rgb
 xterm*Background: black
 xterm*Foreground: white
 xterm.vt100.saveLines: 4096
-xterm.vt100.font: 9x15
+xterm*faceSize: 10
+xterm*faceName: Monospace

@@ -1,5 +1,7 @@
 export DOTFILES=~/.dotfiles
 
+
+export INIT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # dir this script is in
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
