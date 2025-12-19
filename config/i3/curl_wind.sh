@@ -18,8 +18,8 @@ function get_yv_data {
 
 function get_wsct_data {
   local LINES=$( curl $WSCT -s | grep 'km/h\|aus' )
-  WSCT_WIND=$( echo $LINES | grep -oP "\\d*\\.\\d" | tr '\n' ' ' )
-  WSCT_DEG=$( echo $LINES | grep 'aus' | grep -oP "[A-Z]*")
+  WSCT_WIND=$( echo "$LINES" | grep -oP "\\d*\\.?\\d+" | head -2 | tr '\n' ' ' | sed 's/ *$//' )
+  WSCT_DEG=$( echo "$LINES" | grep 'aus' | grep -oP "[A-Z]*" | head -1 )
 }
 
 function get_dir_icon () {
@@ -78,6 +78,12 @@ get_wsct_data
 get_dir_icon2 $WSCT_DEG
 WSCT_ICO=$ICO
 
-echo "🌀 SB$SB_WIND$SB_ICO YV $YV_WIND$YV_ICO TH $WSCT_WIND$WSCT_ICO"
+# Validate and clean up variables
+[[ -z "$SB_WIND" ]] && SB_WIND="0 0"
+[[ -z "$YV_WIND" ]] && YV_WIND="0 0" 
+[[ -z "$WSCT_WIND" ]] && WSCT_WIND="0"
+[[ -z "$WSCT_DEG" ]] && WSCT_DEG="N"
+
+echo "🌀 SB$SB_WIND$SB_ICO YV $YV_WIND$YV_ICO TH $WSCT_WIND $WSCT_ICO"
 
 exit 0

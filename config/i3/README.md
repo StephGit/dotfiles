@@ -9,7 +9,7 @@ Get it [here](https://i3wm.org/docs/repositories.html)
 
 ```
 sudo apt update
-sudo apt install i3status i3lock redshift pulseaudio pavucontrol xbacklight xautolock rofi numlockx flameshot fonts-font-awesome feh lm-sensors
+sudo apt install i3status i3lock redshift xautolock rofi numlockx flameshot fonts-font-awesome feh lm-sensors libpango-1.0-0
 ``` 
 
 * i3status

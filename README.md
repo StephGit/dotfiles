@@ -18,7 +18,10 @@ bash -c "$(curl -fsSL https://raw.github.com/StephGit/dotfiles/master/bin/dotfil
 - Python (needed for zsh) 
 
   * `sudo apt install python3`
-  
+
+
+xclip neovim unzip keepassxc fonts-font-awesome i3 i3status i3lock redshift xautolock rofi numlockx flameshot feh xterm suckless-tools python3
+
 
 ## Enable deoplete
 
