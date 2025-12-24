@@ -1,0 +1,18 @@
+configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
+}
+
+//@theme "Arc-Dark"
+entry {
+    placeholder: "Type here";
+    cursor: pointer;
+}
+
+element {
+  orientation: horizontal;
+  children: [ element-text, element-icon ];
+  spacing: 5px;
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

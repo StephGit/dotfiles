@@ -2,3 +2,4 @@ xrdb -merge ~/.Xresources
 dbus-update-activation-environment --systemd DISPLAY
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
+export GTK_THEME=Adwaita:dark

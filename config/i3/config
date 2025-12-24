@@ -16,7 +16,8 @@ set $icon_font FontAwesome 9
 font pango:$font
 
 # Define Locker
-set $Locker i3lock -t -i $HOME/Pictures/wallpaper.png && sleep 1
+# set $Locker i3lock -t -i $HOME/Pictures/wallpaper.png && sleep 1
+set $Locker i3lock --color 000000 && sleep 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -61,19 +62,18 @@ bindsym $mod+Shift+m	  	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 bindsym $mod+Shift+b            exec $HOME/.dotfiles/util/audio/toggle-bluetooth-headset.sh
 
 # Open volume control for the pipewire sound server
-# bindsym $mod+Shift+s            exec pavucontrol
+# bindsym $mod+Shift+s            exec alsamixer 
 
-# Open arandr/nvidia settings
+# Open arandr settings
 bindsym XF86Display           	exec arandr
-bindsym Shift+XF86Display  	    exec nvidia-settings
 
 # change displaymode
 bindsym $mod+m                  exec $HOME/.screenlayout/display_layout.sh
 bindsym $mod+i		   	          exec $HOME/.screenlayout/1internal_eDP-1.sh
 
 ## display brightness management
-bindsym XF86MonBrightnessUp     exec "xbacklight +10"
-bindsym XF86MonBrightnessDown   exec "xbacklight -10"
+bindsym XF86MonBrightnessUp     exec "brightnessctl set +10%"
+bindsym XF86MonBrightnessDown   exec "brightnessctl set -10%"
 
 # change focus
 bindsym $mod+Left  focus left

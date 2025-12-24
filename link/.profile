@@ -21,3 +21,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH=/opt/apps/sdk-tools-linux-4333796/tools:/opt/apps/sdk-tools-linux-4333796/tools/bin:$PATH
+export GTK_THEME=Adwaita:dark
