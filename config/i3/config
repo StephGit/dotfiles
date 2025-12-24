@@ -73,7 +73,7 @@ bindsym $mod+i		   	          exec $HOME/.screenlayout/1internal_eDP-1.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "brightnessctl set +10%"
-bindsym XF86MonBrightnessDown   exec "brightnessctl set -10%"
+bindsym XF86MonBrightnessDown   exec "brightnessctl set 10%-"
 
 # change focus
 bindsym $mod+Left  focus left
