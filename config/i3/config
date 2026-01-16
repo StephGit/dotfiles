@@ -15,9 +15,9 @@ set $font System San Francisco Display 8
 set $icon_font FontAwesome 9
 font pango:$font
 
-# Define Locker
-# set $Locker i3lock -t -i $HOME/Pictures/wallpaper.png && sleep 1
-set $Locker i3lock --color 000000 && sleep 1
+# Define Locker - only png supported
+set $Locker i3lock -t -i $HOME/.dotfiles/assets/img/background.png && sleep 1
+#set $Locker i3lock --color 000000 && sleep 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -275,7 +275,7 @@ exec --no-startup-id numlockx on
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/.dotfiles/assets/img/background.jpg
 exec_always --no-startup-id windsurf
 exec_always --no-startup-id i3-sensible-terminal
 exec_always --no-startup-id brave-browser
