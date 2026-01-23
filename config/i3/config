@@ -59,7 +59,7 @@ bindsym XF86AudioMicMute	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 bindsym $mod+Shift+m	  	      exec $HOME/.dotfiles/util/audio/toggle-mic.sh
 
 # Enable bluetooth headset
-bindsym $mod+Shift+b            exec $HOME/.dotfiles/util/audio/toggle-bluetooth-headset.sh
+bindsym $mod+Shift+b            exec i3-sensible-terminal -e $HOME/.dotfiles/util/audio/reset-bluetooth-device.sh
 
 # Open volume control for the pipewire sound server
 # bindsym $mod+Shift+s            exec alsamixer 
