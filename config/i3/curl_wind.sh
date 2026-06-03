@@ -7,24 +7,23 @@ SCNI="https://www.meteomap.cloud/1088/get/chart/wind?tf=current"
 
 function get_sb_data {
   local LINES=$( curl $SB -s )
-  SB_WIND=$( echo $LINES | jq '((.windSpeedKnotsIchtus*1.852*100|round/100|tostring) + " " + (.windSpeedHigh1KnotsIchtus*1.852*100|round/100|tostring))' | tr '"' ' ' )
+  SB_WIND=$( echo $LINES | jq '((.windSpeedKnotsIchtus|round|tostring) + " " + (.windSpeedHigh1KnotsIchtus|round|tostring))' | tr '"' ' ' )
   SB_DEG=$( echo $LINES | jq '.windDirectionDegreesIchtus' )
 }
 
 function get_yv_data {
   local LINES=$( curl $YV -s | grep -i 'km/h\|DIRECTION' )
-  YV_WIND=$( echo $LINES | grep -oP "\\d*\\.\\d" | tr '\n' ' ' )
+  YV_WIND=$( echo $LINES | grep -oP "\\d*\\.\\d" | awk '{printf "%d ", $1/1.852}' )
   YV_DEG=$( echo $LINES | grep -oP "\\d*&deg" | grep -oP "\\d*")
 }
 
 function get_scni_data {
   local RESPONSE=$( curl $SCNI -s )
   local LAST_Y=$( echo $RESPONSE | jq -r '.data.data[-1].y' )
-  local LAST_X=$( echo $RESPONSE | jq -r '.data.data[-1].x' )
   local HOURLY_DIR=$( echo $RESPONSE | jq -r '.data.hourlyDir' )
   local LAST_DIR_MATCH=$( echo $HOURLY_DIR | grep -oP 'title="[^"]*"' | tail -1 )
   local DIR_PART=$( echo $LAST_DIR_MATCH | grep -oP ': \K[^"]+' )
-  SCNI_WIND=$( echo "$LAST_Y 0" | awk '{printf "%d %d", $1/1.852, 0}' )
+  SCNI_WIND=$( echo "$LAST_Y" | awk '{printf "%d", $1/1.852, 0}' )
   SCNI_DIR="$DIR_PART"
 }
 
@@ -118,14 +117,30 @@ get_wsct_data
 get_dir_icon $WSCT_DEG
 WSCT_ICO=$ICO
 
+function colorize {
+  local LABEL=$1
+  local WIND=$2
+  local ICO=$3
+  local VAL=$( echo "$WIND" | awk '{print $1}' )
+  if [[ $VAL -gt 15 ]]; then
+    echo "<span color=\"red\">$LABEL$WIND $ICO</span>"
+  else
+    echo "$LABEL$WIND $ICO"
+  fi
+}
+
 # Validate and clean up variables
 [[ -z "$SB_WIND" ]] && SB_WIND="0 0"
 [[ -z "$YV_WIND" ]] && YV_WIND="0 0" 
 [[ -z "$WSCT_WIND" ]] && WSCT_WIND="0 0"
 [[ -z "$WSCT_DEG" ]] && WSCT_DEG="N"
-[[ -z "$SCNI_WIND" ]] && SCNI_WIND="0 0"
+[[ -z "$SCNI_WIND" ]] && SCNI_WIND="0"
 [[ -z "$SCNI_DIR" ]] && SCNI_DIR="N"
 
-echo "🌀 SB$SB_WIND$SB_ICO YV $YV_WIND$YV_ICO TH $WSCT_WIND $WSCT_ICO INT $SCNI_WIND $SCNI_ICO"
+C_SB=$( colorize "SB" "$SB_WIND" "$SB_ICO" )
+C_YV=$( colorize "YV " "$YV_WIND" "$YV_ICO" )
+C_TH=$( colorize "TH " "$WSCT_WIND" "$WSCT_ICO" )
+C_INT=$( colorize "INT " "$SCNI_WIND" "$SCNI_ICO" )
+echo "🌀 $C_SB $C_YV $C_TH $C_INT"
 
 exit 0
