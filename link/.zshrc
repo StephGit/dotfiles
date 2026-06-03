@@ -48,6 +48,7 @@ alias docker-compose="docker compose"
 alias vi="vim"
 alias vim="nvim -p"
 alias freerdp="flatpak run com.freerdp.FreeRDP"
+killport() { fuser -k "$1"/tcp; }
 source <(oc completion zsh)
 
 
@@ -64,3 +65,12 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Zscaler OS Switching Tools
+export PATH="$HOME/bin:$PATH"
+
+# Zscaler aliases
+alias zscaler-status='os-switch status'
+alias zscaler-ubuntu='sudo /home/sgirod/bin/os-switch ubuntu'
+alias zscaler-popos='sudo /home/sgirod/bin/os-switch popos'
+alias zscaler-help='os-switch help'
